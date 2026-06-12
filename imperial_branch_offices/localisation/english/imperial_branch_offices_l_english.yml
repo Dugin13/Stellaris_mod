@@ -1,0 +1,42 @@
+l_english:
+ # Ascension Perk
+ ap_diplomatic_expansion:0 "Diplomatic Expansion"
+ ap_diplomatic_expansion_desc:0 "Our diplomatic corps has evolved beyond traditional embassies. We can now establish §Ybranch offices§! on the worlds of other empires, projecting our influence and reaping economic benefits."
+ ap_diplomatic_expansion_effect:0 "Unlocks the ability to establish §YBranch Offices§! on other empires' planets.\nUnlocks special §YImperial Branch Office Buildings§!."
+ requires_non_corporate_authority:0 "Requires a non-corporate authority"
+ requires_diplomacy_tradition:0 "Requires the §YDiplomacy§! tradition tree"
+ 
+ # Buildings
+ building_imperial_embassy:0 "Embassy Complex"
+ building_imperial_embassy_desc:0 "A sophisticated diplomatic facility that serves as a permanent representation of our empire's interests on this world."
+ 
+ building_imperial_trade_hub:0 "Imperial Trade Hub"
+ building_imperial_trade_hub_desc:0 "A bustling commercial center that facilitates trade between our empire and the local population."
+ 
+ building_imperial_cultural_center:0 "Cultural Exchange Center"
+ building_imperial_cultural_center_desc:0 "A facility dedicated to sharing our culture and values with the local population, generating goodwill and unity."
+ 
+ building_imperial_research_liaison:0 "Research Liaison Office"
+ building_imperial_research_liaison_desc:0 "A collaborative research facility that benefits from local expertise while advancing our own technological goals."
+ 
+ building_imperial_industrial_outpost:0 "Industrial Outpost"
+ building_imperial_industrial_outpost_desc:0 "A diversified manufacturing facility that produces both alloys and consumer goods for our empire."
+ 
+ building_imperial_foundry:0 "Foundry Complex"
+ building_imperial_foundry_desc:0 "A specialized heavy industry facility dedicated to alloy production for our empire's military and construction needs."
+ 
+ building_imperial_factory:0 "Factory Complex"
+ building_imperial_factory_desc:0 "A consumer goods production facility that manufactures essential goods for our empire's population."
+ 
+ building_imperial_agricultural_complex:0 "Agricultural Complex"
+ building_imperial_agricultural_complex_desc:0 "A large-scale farming operation that produces food for our empire while utilizing local agricultural knowledge."
+ 
+ building_imperial_energy_station:0 "Energy Station"
+ building_imperial_energy_station_desc:0 "A power generation facility that taps into local energy infrastructure to provide power for our empire."
+ 
+ building_imperial_mining_complex:0 "Mining Complex"
+ building_imperial_mining_complex_desc:0 "A comprehensive mining operation that extracts minerals from the host planet for our empire's use."
+ 
+ # Events
+ imperial_branch_office.2.name:0 "Diplomatic Expansion Initiative"
+ imperial_branch_office.2.desc:0 "Our diplomatic service has been restructured to support a revolutionary new approach to foreign relations. We can now establish permanent branch offices on the worlds of other empires, creating a network of influence and commerce that spans the galaxy.\n\nThese offices will serve as hubs for trade, cultural exchange, research cooperation, and resource acquisition, all while strengthening our diplomatic ties with other nations."

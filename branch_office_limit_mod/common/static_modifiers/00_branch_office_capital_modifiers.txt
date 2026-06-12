@@ -1,0 +1,13 @@
+# Static modifiers to add extra branch office slots based on capital tiers
+
+branch_office_bonus_tier_1 = {
+	planet_max_branch_office_buildings_add = @branch_office_slots_per_capital
+}
+
+branch_office_bonus_tier_2 = {
+	planet_max_branch_office_buildings_add = @branch_office_slots_per_capital
+}
+
+branch_office_bonus_tier_3 = {
+	planet_max_branch_office_buildings_add = @branch_office_slots_per_capital
+}

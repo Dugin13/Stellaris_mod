@@ -1,0 +1,8 @@
+l_english:
+ # Gestalt Atomic Assembler - NEW building for gestalt empires
+ building_ult_gestalt_atomic_assembler:0 "Gestalt Atomic Assembler"
+ building_ult_gestalt_atomic_assembler_desc:0 "A massive industrial complex that uses molecular manipulation technology to produce alloys at an unprecedented scale. This facility is optimized for gestalt consciousness integration, allowing fabricator drones to work in perfect synchronization."
+ 
+ # Gestalt Commercial Center - NEW building for gestalt trade generation
+ building_ult_gestalt_commercial_center:0 "Gestalt Commercial Hub"
+ building_ult_gestalt_commercial_center_desc:0 "A vast logistics and coordination center that facilitates trade negotiations and resource exchange with other empires. Logistics drones manage external trade while maintenance drones ensure the facility operates smoothly."

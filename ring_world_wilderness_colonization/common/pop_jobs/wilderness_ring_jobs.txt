@@ -1,0 +1,2 @@
+# Wilderness Ring World Jobs
+# (Currently empty - no custom jobs defined)

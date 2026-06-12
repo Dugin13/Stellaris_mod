@@ -1,0 +1,5 @@
+# Branch Office Building Slots - Extra Per Capital Tier (adds to vanilla's 1)
+@branch_office_slots_per_capital = 1
+
+# Total Maximum Branch Office Buildings
+@max_branch_office_buildings = 8

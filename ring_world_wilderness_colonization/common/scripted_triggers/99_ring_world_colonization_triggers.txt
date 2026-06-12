@@ -1,0 +1,31 @@
+# Override the base game trigger to allow wilderness on ring worlds and relic worlds
+# with the Ring World Pioneers ascension perk
+
+is_habitable_for_wilderness = {
+	OR = {
+		# Original condition: not artificial and not special planet classes
+		AND = {
+			NOR = {
+				is_artificial = yes
+				is_planet_class = pc_city
+				is_planet_class = pc_hive
+				is_planet_class = pc_machine
+				is_planet_class = pc_relic
+				is_planet_class = pc_nanotech
+				is_planet_class = pc_volcanic
+			}
+		}
+		# NEW: Exception for ring worlds and relic worlds with ascension perk
+		AND = {
+			exists = owner
+			owner = {
+				is_wilderness_empire = yes
+				has_ascension_perk = ap_ring_world_pioneers
+			}
+			OR = {
+				is_planet_class = pc_ringworld_habitable
+				is_planet_class = pc_relic
+			}
+		}
+	}
+}

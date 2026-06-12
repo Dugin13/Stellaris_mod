@@ -1,0 +1,30 @@
+# Scripted triggers for Tankbound Synthetic compatibility
+
+# Check if empire has completed synthetic ascension
+is_synthetic_empire = {
+	OR = {
+		has_trait = trait_mechanical
+		has_trait = trait_machine_unit
+		has_country_flag = synthetic_empire
+		has_ascension_perk = ap_synthetic_evolution
+	}
+}
+
+# Check if planet is aquatic-type for Tankbound benefits
+is_aquatic_planet = {
+	OR = {
+		is_planet_class = pc_ocean
+		is_planet_class = pc_arctic
+		is_planet_class = pc_tundra
+		is_planet_class = pc_continental
+	}
+}
+
+# Check if empire should get Tankbound benefits
+has_tankbound_benefits = {
+	exists = owner
+	owner = {
+		has_valid_civic = civic_tankbound
+	}
+	is_aquatic_planet = yes
+}

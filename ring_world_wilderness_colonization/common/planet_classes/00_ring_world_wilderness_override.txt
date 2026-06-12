@@ -1,0 +1,2 @@
+# Override ring world planet classes to allow colonization with wilderness
+# This file is intentionally minimal - the ascension perk works through different mechanics

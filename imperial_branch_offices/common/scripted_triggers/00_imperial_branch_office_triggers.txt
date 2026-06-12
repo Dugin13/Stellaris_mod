@@ -1,0 +1,9 @@
+# Trigger to check if a country can establish branch offices
+can_establish_branch_offices = {
+	OR = {
+		has_authority = auth_corporate
+		has_authority = auth_corporate_megacorp
+		has_ascension_perk = ap_diplomatic_expansion
+		has_country_flag = imperial_branch_offices_enabled
+	}
+}

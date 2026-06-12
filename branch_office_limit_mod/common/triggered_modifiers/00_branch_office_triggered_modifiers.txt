@@ -1,0 +1,36 @@
+# Apply static modifiers based on capital buildings
+
+branch_office_bonus_capital_shelter = {
+	potential = {
+		OR = {
+			has_building = building_colony_shelter
+			has_building = building_deployment_post
+		}
+	}
+	
+	modifier = planet_colony_shelter_branch_office
+}
+
+branch_office_bonus_capital = {
+	potential = {
+		has_building = building_capital
+	}
+	
+	modifier = planet_capital_1_branch_office
+}
+
+branch_office_bonus_major_capital = {
+	potential = {
+		has_building = building_major_capital
+	}
+	
+	modifier = planet_capital_2_branch_office
+}
+
+branch_office_bonus_system_capital = {
+	potential = {
+		has_building = building_system_capital
+	}
+	
+	modifier = planet_capital_3_branch_office
+}

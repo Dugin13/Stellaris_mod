@@ -1,0 +1,544 @@
+# Custom Branch Office Buildings for Regular Empires
+
+# Embassy Complex - Provides diplomatic weight and amenities
+building_imperial_embassy = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = government
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	allow = {
+		num_buildings = { type = building_imperial_embassy value = 0 }
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	planet_modifier = {
+		planet_amenities_add = 5
+	}
+	
+	country_modifier = {
+		diplo_weight_mult = 0.03
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_clerk_add = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 50
+	}
+}
+
+# Trade Hub - Generates trade value
+building_imperial_trade_hub = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = trade
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	planet_modifier = {
+		trade_value_add = 10
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_merchant_add = 1
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+# Cultural Center - Provides amenities and unity
+building_imperial_cultural_center = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = unity
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	planet_modifier = {
+		planet_amenities_add = 8
+	}
+	
+	country_modifier = {
+		country_unity_produces_mult = 0.02
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_culture_worker_add = 1
+		}
+	}
+	
+	ai_weight = {
+		weight = 75
+	}
+}
+
+# Research Liaison Office - Generates research
+building_imperial_research_liaison = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = research
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 600
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+	
+	country_modifier = {
+		all_technology_research_speed = 0.02
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_researcher_add = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 80
+	}
+}
+
+# Industrial Outpost - Generates alloys and consumer goods
+building_imperial_industrial_outpost = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 600
+		}
+		upkeep = {
+			energy = 3
+			minerals = 4
+		}
+		produces = {
+			alloys = 6
+			consumer_goods = 6
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_foundry_add = 1
+			job_artisan_add = 1
+		}
+	}
+	
+	ai_weight = {
+		weight = 70
+	}
+}
+
+# Foundry Complex - Generates alloys only
+building_imperial_foundry = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 600
+		}
+		upkeep = {
+			energy = 3
+			minerals = 6
+		}
+		produces = {
+			alloys = 12
+		}
+	}
+	
+	country_modifier = {
+		country_alloys_produces_mult = 0.02
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_foundry_add = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 80
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = alloys
+					value < 5
+				}
+			}
+		}
+	}
+}
+
+# Factory Complex - Generates consumer goods only
+building_imperial_factory = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 600
+		}
+		upkeep = {
+			energy = 3
+			minerals = 6
+		}
+		produces = {
+			consumer_goods = 12
+		}
+	}
+	
+	country_modifier = {
+		country_consumer_goods_produces_mult = 0.02
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_artisan_add = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 75
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 5
+				}
+			}
+		}
+	}
+}
+
+# Agricultural Complex - Generates food
+building_imperial_agricultural_complex = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = resource
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+		produces = {
+			food = 15
+		}
+	}
+	
+	country_modifier = {
+		country_food_produces_mult = 0.03
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_farmer_add = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 60
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = food
+					value < 0
+				}
+			}
+		}
+	}
+}
+
+# Energy Station - Generates energy
+building_imperial_energy_station = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = resource
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			energy = 15
+		}
+	}
+	
+	country_modifier = {
+		country_energy_produces_mult = 0.03
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_technician_add = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 90
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 10
+				}
+			}
+		}
+	}
+}
+
+# Mining Complex - Generates minerals
+building_imperial_mining_complex = {
+	base_buildtime = 360
+	owner_type = corporate
+	
+	category = resource
+	
+	potential = {
+		exists = owner
+		owner = { 
+			OR = {
+				has_country_flag = imperial_branch_offices_enabled
+				has_ascension_perk = ap_diplomatic_expansion
+			}
+		}
+		has_branch_office = yes
+	}
+	
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 400
+		}
+		upkeep = {
+			energy = 2
+		}
+		produces = {
+			minerals = 15
+		}
+	}
+	
+	country_modifier = {
+		country_minerals_produces_mult = 0.03
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_miner_add = 3
+		}
+	}
+	
+	ai_weight = {
+		weight = 85
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value < 10
+				}
+			}
+		}
+	}
+}

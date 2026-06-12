@@ -1,0 +1,68 @@
+# Tankbound Civic Override
+# Keeps all vanilla effects, removes species_class requirement and swap_type
+
+civic_tankbound = {
+	playable = { has_shroud_dlc = yes }
+	ai_playable = { has_shroud_dlc = yes }
+	description = "civic_tankbound_effects"
+	negative_description = "civic_tankbound_negative_effects"
+	
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+		civics = { NOT = { value = civic_tankbound_corporate } }
+	}
+	
+	possible = {
+		origin = {
+			NOR = {
+				value = origin_broken_shackles
+				value = origin_payback
+				value = origin_toxic_knights
+				value = origin_clone_army
+				value = origin_primal_calling
+				value = origin_syncretic_evolution
+				value = origin_unplugged
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_mining_guilds
+				value = civic_anglers
+				value = civic_agrarian_idyll
+				value = civic_citizen_service
+				value = civic_slaver_guilds
+				value = civic_tankbound_corporate
+			}
+		}
+		# REMOVED: species_class requirement
+		# Now any portrait can use tankbound civic
+	}
+	
+	alternate_civic_version = civic_tankbound_corporate
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = civic_tankbound_corporate
+			}
+		}
+		remove = {
+			# Changed from checking conditions to always = no
+			# This prevents removal even after synthetic ascension
+			always = no
+		}
+	}
+	
+	# REMOVED: swap_type (which would remove this civic after synthetic ascension)
+	# REMOVED: traits block (which would invalidate civic when trait is lost)
+	# This allows the civic to stay active after becoming synthetic
+	
+	modifier = {
+		planet_automated_jobs_upkeep_mult = @civic_tankbound_job_upkeep
+		job_farmer_automated_workforce_mult = 1.0
+		job_miner_automated_workforce_mult = 1.0
+		job_technician_automated_workforce_mult = 1.0
+	}
+	
+	random_weight = { base = @civic_default_random_weight }
+}

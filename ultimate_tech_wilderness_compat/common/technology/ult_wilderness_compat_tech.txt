@@ -1,0 +1,82 @@
+# Override Ultimate Technologies techs to fix Wilderness compatibility
+# Vanilla Stellaris blocks Wilderness from tech_physics_3, tech_engineering_3, and tech_society_3
+# This breaks three Ultimate Technologies tech chains
+
+##################
+# Nano Drone Colony - Fix for Wilderness (removes tech_society_3 requirement)
+# Required for: tech_ult_nano_drone_enhance (unlocks trait_ult_immortal)
+# Required for: tech_ult_paradise_homeplanet (our Gestalt Commercial Center needs this!)
+##################
+
+tech_ult_nano_drone_colony = {
+	area = society
+	cost = 30000
+	tier = 4
+	category = { biology }
+	is_rare = yes
+	
+	# Wilderness-compatible prerequisites
+	# Non-Wilderness: requires tech_ult_ultimate_technology + tech_society_3
+	# Wilderness: requires tech_ult_ultimate_technology only
+	prerequisites = { "tech_ult_ultimate_technology" }
+	
+	weight = 60
+
+	modifier = {
+		ships_upkeep_mult = -0.20
+		megastructure_build_speed_mult = 0.25
+		planet_jobs_food_produces_mult = 0.20
+	}
+}
+
+##################
+# Molecular Manipulation - Fix for Wilderness (removes tech_engineering_3 requirement)
+# Required for: building_ult_gestalt_atomic_assembler (our new gestalt alloy building!)
+# Required for: tech_ult_paradise_homeplanet
+##################
+
+tech_ult_molecular_manipulation = {
+	area = engineering
+	cost = 30000
+	tier = 4
+	category = { materials }
+	is_rare = yes
+	
+	# Wilderness-compatible prerequisites
+	# Non-Wilderness: requires tech_ult_ultimate_technology + tech_engineering_3
+	# Wilderness: requires tech_ult_ultimate_technology only
+	prerequisites = { "tech_ult_ultimate_technology" }
+	
+	weight = 60
+
+	modifier = {
+		planet_jobs_upkeep_mult = -0.20
+		megastructure_build_cost_mult = -0.20
+		planet_jobs_alloys_produces_mult = 0.20
+	}
+}
+
+##################
+# Beyond Dimension - Fix for Wilderness (removes tech_physics_3 requirement)
+# Provides shield and evasion bonuses
+##################
+
+tech_ult_beyond_dimension = {
+	area = physics
+	cost = 30000
+	tier = 4
+	category = { field_manipulation }
+	is_rare = yes
+	
+	# Wilderness-compatible prerequisites
+	# Non-Wilderness: requires tech_ult_ultimate_technology + tech_physics_3
+	# Wilderness: requires tech_ult_ultimate_technology only
+	prerequisites = { "tech_ult_ultimate_technology" }
+	
+	weight = 20
+
+	modifier = {
+		ship_shield_mult = 0.50
+		ship_evasion_add = 10
+	}
+}

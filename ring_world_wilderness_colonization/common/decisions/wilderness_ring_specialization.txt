@@ -1,0 +1,2 @@
+# Ring World District Specialization Decisions
+# (Removed - wilderness districts now appear directly on specialized ring world segments)

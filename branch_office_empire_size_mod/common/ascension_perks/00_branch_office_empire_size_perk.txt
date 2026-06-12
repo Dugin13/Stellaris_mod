@@ -1,0 +1,47 @@
+# Branch Office Empire Size Ascension Perk
+# Removes empire size cost from branch offices
+
+ap_corporate_efficiency = {
+	icon = "GFX_ascension_perk_corporate_efficiency"
+	
+	potential = {
+		OR = {
+			has_authority = auth_corporate
+			has_authority = auth_corporate_megacorp
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_corporate_authority"
+			OR = {
+				has_authority = auth_corporate
+				has_authority = auth_corporate_megacorp
+			}
+		}
+	}
+	
+	modifier = {
+		# Removes empire size cost from branch offices
+		empire_size_branch_office_mult = -1.0
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			has_valid_civic = civic_trading_posts
+		}
+		modifier = {
+			factor = 1.5
+			num_owned_planets > 10
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				has_branch_office = yes
+				count >= 3
+			}
+		}
+	}
+}

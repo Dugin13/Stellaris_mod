@@ -1,0 +1,302 @@
+# Wilderness Ring World Districts
+# Wilderness-specific ring world districts that appear on specialized segments
+# Based on Ultimate Technologies district structure
+
+# Wilderness City District (Housing Focus)
+district_rw_wilderness_city = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_ringworld_city
+		from = { is_wilderness_empire = yes }
+	}
+	
+	potential = {
+		is_planet_class = pc_ringworld_city
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	
+	allow = {
+		owner = { has_ascension_perk = ap_ring_world_pioneers }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_rw_city
+		district_rw_hive
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			exotic_gases = 50
+		}
+		upkeep = {
+			energy = 5
+			exotic_gases = 1
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 50
+		planet_amenities_add = 20
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = -10
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			job_maintenance_drone_add = 10
+		}
+	}
+}
+
+# Wilderness Research District (Science Focus)
+district_rw_wilderness_science = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_ringworld_tech
+		from = { is_wilderness_empire = yes }
+	}
+	
+	potential = {
+		is_planet_class = pc_ringworld_tech
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	
+	allow = {
+		owner = { has_ascension_perk = ap_ring_world_pioneers }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_rw_science
+		district_rw_hive
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			exotic_gases = 50
+		}
+		upkeep = {
+			energy = 5
+			exotic_gases = 1
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 20
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_calculator_effect_desc
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			job_calculator_physicist_add = 4
+			job_calculator_biologist_add = 4
+			job_calculator_engineer_add = 4
+		}
+	}
+}
+
+# Wilderness Agriculture District (Farming Focus)
+district_rw_wilderness_farming = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_ringworld_farming
+		from = { is_wilderness_empire = yes }
+	}
+	
+	potential = {
+		is_planet_class = pc_ringworld_farming
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	
+	allow = {
+		owner = { has_ascension_perk = ap_ring_world_pioneers }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_rw_farming
+		district_rw_hive
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 20
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_agri_drone_effect_desc
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			job_agri_drone_add = 10
+		}
+	}
+}
+
+# Wilderness Industrial District (Alloy/Consumer Goods Focus)
+district_rw_wilderness_industrial = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_ringworld_industrial
+		from = { is_wilderness_empire = yes }
+	}
+	
+	potential = {
+		is_planet_class = pc_ringworld_industrial
+		exists = owner
+		owner = { is_wilderness_empire = yes }
+	}
+	
+	allow = {
+		owner = { has_ascension_perk = ap_ring_world_pioneers }
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_rw_industrial
+		district_rw_hive
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			volatile_motes = 50
+		}
+		upkeep = {
+			energy = 5
+			volatile_motes = 1
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 20
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = no
+			}
+		}
+		text = job_fabricator_effect_desc
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_fabricator_add = 10
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		text = job_catalytic_drone_effect_desc
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_drone_add = 10
+		}
+	}
+}

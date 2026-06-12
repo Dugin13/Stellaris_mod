@@ -1,0 +1,2 @@
+# Use scripted variable instead
+NDefines.NEconomy.MAX_BRANCH_OFFICE_BUILDINGS = @max_branch_office_buildings

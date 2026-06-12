@@ -1,0 +1,4 @@
+l_english:
+ branch_office_building_slot_cap_tooltip:0 "Maximum Branch Office Buildings: §G8§!\n§HEach capital tier unlocks §G2§! additional building slots§!"
+ MAX_BRANCH_OFFICE_BUILDINGS:0 "Maximum Branch Office Buildings"
+ MAX_BRANCH_OFFICE_BUILDINGS_DESC:0 "The maximum number of buildings that can be constructed in a branch office has been increased to §G8§!.\n\nEach capital building tier unlocks §G2§! branch office building slots instead of the default 1."

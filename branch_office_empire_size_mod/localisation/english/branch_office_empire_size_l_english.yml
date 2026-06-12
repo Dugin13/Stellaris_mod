@@ -1,0 +1,4 @@
+﻿l_english:
+ ap_corporate_efficiency:0 "Corporate Efficiency"
+ ap_corporate_efficiency_desc:0 "Our corporate structure has reached peak efficiency, allowing us to manage branch offices across the galaxy without additional administrative burden."
+ requires_corporate_authority:0 "Requires §YCorporate§! or §YMegacorporate§! authority"

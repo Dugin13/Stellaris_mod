@@ -1,0 +1,56 @@
+To create the red corporate icon using GIMP:
+
+SETUP (One-time):
+1. Install GIMP if you don't have it (https://www.gimp.org/)
+2. Install the DDS plugin for GIMP:
+   - Download from: https://code.google.com/archive/p/gimp-dds/
+   - Or search "GIMP DDS plugin" for your GIMP version
+   - Place the plugin file in: C:\Users\[YourUsername]\AppData\Roaming\GIMP\2.10\plug-ins\
+   - Restart GIMP
+
+EDITING STEPS:
+1. Find the original Stellaris corporate icon:
+   Steam\steamapps\common\Stellaris\gfx\interface\icons\governments\authorities\auth_corporate.dds
+
+2. Open GIMP and load the DDS file (File → Open)
+
+3. Change yellow to red using one of these methods:
+
+   METHOD A - Hue/Saturation (Easiest):
+   - Go to: Colors → Hue-Saturation
+   - Select "Yellows" from the dropdown
+   - Move the Hue slider left to around -30 to -40 (this shifts yellow toward red)
+   - Adjust Saturation if needed to make it more vibrant
+   - Click OK
+
+   METHOD B - Colorize:
+   - Go to: Colors → Hue-Saturation
+   - Check "Colorize"
+   - Set Hue to around 0-10 (red range)
+   - Adjust Saturation to 70-90
+   - Adjust Lightness as needed
+   - Click OK
+
+   METHOD C - Color Balance:
+   - Go to: Colors → Color Balance
+   - For Highlights: Move slider toward Red (+50 to +100)
+   - For Midtones: Move slider toward Red (+30 to +60)
+   - Click OK
+
+4. Export the file:
+   - File → Export As
+   - Save to: imperial_corporate_mod\gfx\interface\icons\governments\authorities\auth_imperial_corporate.dds
+   - In the DDS export dialog:
+     * Compression: BC3 / DXT5 (for images with transparency)
+     * Format: DXT5
+     * Generate mipmaps: YES
+     * Save type: Automatic
+   - Click Export
+
+5. Test in Stellaris by loading the mod
+
+TIPS:
+- Keep the original icon's size (usually 128x128 or 256x256)
+- Don't change the alpha channel/transparency
+- Preview before exporting to make sure the red looks good
+

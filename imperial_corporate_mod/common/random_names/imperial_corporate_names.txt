@@ -1,0 +1,45 @@
+# Imperial Corporate Empire Names
+
+# Imperial Corporate name parts (combining imperial and corporate elements)
+empire_name_parts_list = {
+	key = "imperial_corp"
+	parts = {
+		Imperial_Corporation = 3
+		Imperial_Conglomerate = 2
+		Royal_Corporation = 2
+		Crown_Enterprises = 2
+		Sovereign_Holdings = 2
+		Imperial_Holdings = 2
+		Dynastic_Corporation = 2
+		Crown_Industries = 2
+		Imperial_Enterprises = 2
+		Royal_Conglomerate = 1
+		Sovereign_Corporation = 1
+		Dynasty_Holdings = 1
+		Imperial_Systems = 1
+		Crown_Corporation = 3
+		Royal_Holdings = 1
+		Hereditary_Conglomerate = 1
+		Sovereign_Industries = 1
+		Imperial_Syndicate = 1
+	}
+}
+
+# Imperial Corporate empire name format
+empire_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 1000
+			has_government = "gov_imperial_corporate"
+			is_pirate = no
+			is_primitive = no
+			NOT = { is_country_type = fallen_empire }
+			NOT = { is_country_type = awakened_fallen_empire }
+		}
+	}
+	format = "{[This.GetSpeciesAdj] {<imperial_corp>}}"
+	adjective = "{[This.GetSpeciesAdj]}"
+	prefix_format = "{[This.GetSpeciesAdj] {<imperial_corp>}}"
+	# Example: Human Imperial Corporation
+}

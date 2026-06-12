@@ -1,0 +1,379 @@
+# Override for Ultimate Technologies Neural Uplink Datacore
+# Provides Wilderness origin compatibility
+# Wilderness empires get Brain Drones instead of Synapse Drones
+
+building_ult_datacore = {
+	base_buildtime = 720
+	planet_limit = 1
+
+	category = research
+
+	building_sets = {
+		research
+		unity
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			owner = {
+				is_gestalt = no
+				is_regular_empire = no
+			}
+		}
+	}
+
+	convert_to = {
+		building_ult_library
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 2000
+		}
+		produces = {
+			trigger = { exists = owner }
+			unity = 5
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	planet_modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.30
+		planet_jobs_unity_produces_mult = 0.20
+		job_coordinator_add = 400
+	}
+
+	prerequisites = {
+		"tech_ult_ultimate_technology"
+	}
+
+	triggered_desc = {
+		text = building_ult_library_effect
+	}
+
+	triggered_desc = {
+		text = job_coordinator_effect_desc
+	}
+
+	show_tech_unlock_if = { 
+		is_gestalt = yes
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+##################
+# Gestalt Terminal - Fixed for Wilderness compatibility
+##################
+
+building_ult_gestalt_terminal = {
+	base_buildtime = 180
+	planet_limit = 1
+
+	category = manufacturing
+
+	building_sets = {
+		industrial
+		urban
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+
+	convert_to = {
+		building_ult_planetary_terminal
+	}
+
+	planet_modifier = {
+		planet_jobs_upkeep_mult = -0.20
+		pop_bonus_workforce_mult = 0.20
+		job_coordinator_add = 200
+	}
+
+	country_modifier = {
+		country_resource_max_add = 20000
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	prerequisites = {
+		"tech_ult_paradise_homeplanet"
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+##################
+# Intelligent Laboratory - Fixed for ALL hive minds
+# Original uses non-workable brain_drone_physicist jobs
+##################
+
+building_ult_intelligent_lab = {
+	base_buildtime = 360
+
+	category = research
+
+	building_sets = {
+		research
+	}
+
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	destroy_trigger = {
+		OR = {
+			has_modifier = slave_colony
+			has_modifier = resort_colony
+		}
+	}
+
+	# Regular Empire jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_physicist_add = 400
+			job_biologist_add = 400
+			job_engineer_add = 400
+		}
+	}
+
+	# Gestalt Empire jobs - ALL gestalts use calculator jobs
+	# Game auto-swaps names: Machine=Calculator, Hive=Brain Drone, Wilderness=Evosymbiont
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_calculator_physicist_add = 400
+			job_calculator_biologist_add = 400
+			job_calculator_engineer_add = 400
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			exotic_gases = 100
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	prerequisites = {
+		"tech_ult_ultimate_technology"
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_calculator_effect_desc
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+##################
+# Gestalt Atomic Assembler - NEW building for gestalt alloy production
+# Ultimate Technologies only has Industrial Atomic Assembler for regular empires
+# This provides equivalent alloy production for gestalts (hive minds, wilderness, machines)
+##################
+
+building_ult_gestalt_atomic_assembler = {
+	base_buildtime = 360
+	base_cap_amount = 3
+	icon = "building_ult_industrial_atomic_assembler"
+
+	category = manufacturing
+
+	building_sets = {
+		industrial
+		factory
+		foundry
+	}
+
+	prerequisites = {
+		"tech_ult_molecular_manipulation"
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_gestalt = no }
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+
+	# Gestalt alloy production - fabricator jobs work for all gestalts
+	planet_modifier = {
+		job_fabricator_add = 200
+		planet_jobs_alloys_produces_mult = 0.10
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			volatile_motes = 200
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	triggered_desc = {
+		text = job_fabricator_effect_desc
+	}
+
+	show_tech_unlock_if = { 
+		is_gestalt = yes
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value > 200
+				}
+			}
+		}
+	}
+}
+
+##################
+# Gestalt Commercial Center - NEW building for gestalt trade generation
+# Ultimate Technologies only has Commercial Center for regular empires
+# This provides equivalent trade value generation for gestalts
+##################
+
+building_ult_gestalt_commercial_center = {
+	base_buildtime = 240
+	icon = "building_ult_commercial_center"
+
+	category = trade
+
+	building_sets = {
+		trade
+		urban
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_gestalt = no }
+			has_modifier = slave_colony
+		}
+	}
+
+	# Gestalt trade and amenity jobs
+	# logistics_drone produces 6 trade each (auto-swaps to spindlesymbiont for wilderness)
+	# maintenance_drone produces amenities + 1 trade each
+	planet_modifier = {
+		job_logistics_drone_add = 600
+		job_maintenance_drone_add = 100
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	prerequisites = {
+		"tech_ult_paradise_homeplanet"
+	}
+
+	show_tech_unlock_if = { 
+		is_gestalt = yes
+	}
+
+	triggered_desc = {
+		text = job_logistics_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}

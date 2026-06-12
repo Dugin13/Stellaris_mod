@@ -1,0 +1,22 @@
+﻿l_english:
+ ap_ring_world_pioneers:0 "Ring World Pioneers"
+ ap_ring_world_pioneers_desc:0 "Even steel must bend to roots. Ring worlds and relic worlds are not merely structures of metal and technology - they are living worlds, and life demands wilderness. Rather than fight against nature, we have learned to embrace it, establishing our colonies among the untamed landscapes of these ancient places.\n\n§EEffects:§!\n§Y+10%§! Habitability on Ring Worlds and Relic Worlds\nAllows colonization of Ring World and Relic World segments with wilderness blockers"
+ ap_ring_world_pioneers_effect:0 "Enables colonization of Ring World and Relic World segments even when wilderness blockers are present"
+ requires_technology_mega_engineering:0 "Requires §YMega-Engineering§! or §YRing World§! technology"
+ 
+ # Wilderness Ring World Districts
+ district_rw_wilderness_city:0 "Wilderness Habitat Section"
+ district_rw_wilderness_city_plural:0 "Wilderness Habitat Sections"
+ district_rw_wilderness_city_desc:0 "Dense living spaces interwoven with symbiotic organisms, providing housing and maintenance services for the hive."
+ 
+ district_rw_wilderness_science:0 "Wilderness Research Grove"
+ district_rw_wilderness_science_plural:0 "Wilderness Research Groves"
+ district_rw_wilderness_science_desc:0 "Vast biochambers where specialized drones conduct research through symbiotic knowledge networks."
+ 
+ district_rw_wilderness_farming:0 "Wilderness Agricultural Tract"
+ district_rw_wilderness_farming_plural:0 "Wilderness Agricultural Tracts"
+ district_rw_wilderness_farming_desc:0 "Expansive cultivation zones where agricultural drones harvest food resources from engineered ecosystems."
+ 
+ district_rw_wilderness_industrial:0 "Wilderness Production Zone"
+ district_rw_wilderness_industrial_plural:0 "Wilderness Production Zones"
+ district_rw_wilderness_industrial_desc:0 "Industrial complexes where fabricator drones produce alloys through biological-mechanical synthesis."

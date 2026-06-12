@@ -1,0 +1,5 @@
+l_english:
+ civic_corporate_dynasty:0 "Corporate Dynasty"
+ civic_corporate_dynasty_desc:0 "This corporate empire is ruled by a hereditary dynasty of CEOs, with power passing from parent to heir rather than through elections. The stability of dynastic succession brings unity and prestige to the ruling family."
+ civic_corporate_dynasty_effects:0 "§E$civic_corporate_dynasty$§!\n§EEffects:§!\n• No elections - hereditary succession\n• Has heir\n• +1 Ruler skill level\n• +5% Unity production"
+ civic_tooltip_corporate_dynasty:0 "Corporate Dynasty"

@@ -1,0 +1,25 @@
+﻿l_english:
+ auth_imperial_corporate:0 "Imperial Corporate"
+ auth_imperial_corporate_desc:0 "A corporate authority governed by hereditary succession. Power is passed down through a dynasty of CEOs, removing the need for elections."
+ civic_tooltip_imperial_corporate:0 "Imperial Corporate Authority"
+
+ # Random Empire Names
+ Imperial_Corporation:0 "Imperial Corporation"
+ Imperial_Conglomerate:0 "Imperial Conglomerate"
+ Royal_Corporation:0 "Royal Corporation"
+ Crown_Enterprises:0 "Crown Enterprises"
+ Sovereign_Holdings:0 "Sovereign Holdings"
+ Imperial_Holdings:0 "Imperial Holdings"
+ Dynastic_Corporation:0 "Dynastic Corporation"
+ Crown_Industries:0 "Crown Industries"
+ Imperial_Enterprises:0 "Imperial Enterprises"
+ Royal_Conglomerate:0 "Royal Conglomerate"
+ Sovereign_Corporation:0 "Sovereign Corporation"
+ Dynasty_Holdings:0 "Dynasty Holdings"
+ Imperial_Systems:0 "Imperial Systems"
+ Crown_Corporation:0 "Crown Corporation"
+ Royal_Holdings:0 "Royal Holdings"
+ Hereditary_Conglomerate:0 "Hereditary Conglomerate"
+ Sovereign_Industries:0 "Sovereign Industries"
+ Imperial_Syndicate:0 "Imperial Syndicate"
+

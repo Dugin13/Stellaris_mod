@@ -1,0 +1,50 @@
+# Imperial Corporate Authority
+# Combines corporate mechanics with hereditary succession
+
+auth_imperial_corporate = {
+	icon = "gfx/interface/icons/governments/authorities/auth_imperial_corporate.dds"
+	
+	has_heir = yes
+	election_type = none
+	
+	localization_postfix = corporate
+	
+	has_agendas = yes
+	
+	color = { 141 38 38 255 }
+	
+	ruler_council_position = councilor_ruler_corporate
+	
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+	}
+	
+	playable = {
+		has_megacorp = yes
+	}
+	
+	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+			}
+		}
+	}
+	
+	country_modifier = {
+		envoys_add = 1
+		planet_jobs_trade_produces_mult = 0.05
+		country_leader_pool_size = -1
+	}
+	
+	random_weight = {
+		base = 2
+	}
+	
+	tags = {
+		AUTHORITY_SUCCESSION_TYPE
+		AUTHORITY_HAS_HEIR
+		AUTHORITY_CORPORATE
+	}
+}

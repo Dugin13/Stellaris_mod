@@ -1,0 +1,57 @@
+# Ascension Perk that allows regular empires to establish branch offices
+
+ap_diplomatic_expansion = {
+	icon = "GFX_ascension_perk_galactic_ambition"
+	
+	potential = {
+		NOR = {
+			has_authority = auth_corporate
+			has_authority = auth_corporate_megacorp
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_non_corporate_authority"
+			NOR = {
+				has_authority = auth_corporate
+				has_authority = auth_corporate_megacorp
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_diplomacy_tradition"
+			has_tradition = tr_diplomacy_adopt
+		}
+	}
+	
+	on_enabled = {
+		custom_tooltip = "ap_diplomatic_expansion_effect"
+		hidden_effect = {
+			# Grant the ability to establish branch offices
+			set_country_flag = imperial_branch_offices_enabled
+			country_event = { id = imperial_branch_office.1 }
+		}
+	}
+	
+	modifier = {
+		# Bonus diplomatic weight and envoys
+		diplo_weight_mult = 0.10
+		envoys_add = 1
+	}
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 2
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			factor = 1.5
+			num_communications > 5
+		}
+	}
+}

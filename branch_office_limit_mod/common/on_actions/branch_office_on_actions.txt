@@ -1,0 +1,25 @@
+# Hook into on_actions to apply branch office bonuses
+
+on_game_start_country = {
+	events = {
+		branch_office_slots.2
+	}
+}
+
+on_colony_2_pop = {
+	events = {
+		branch_office_slots.1
+	}
+}
+
+on_building_complete = {
+	events = {
+		branch_office_slots.1
+	}
+}
+
+on_building_upgraded = {
+	events = {
+		branch_office_slots.1
+	}
+}

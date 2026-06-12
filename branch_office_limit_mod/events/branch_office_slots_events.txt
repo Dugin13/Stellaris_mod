@@ -1,0 +1,68 @@
+# Grant extra branch office slots based on capital tier
+
+namespace = branch_office_slots
+
+# Fired when a building is built or on game start
+planet_event = {
+	id = branch_office_slots.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { has_building = building_system_capital }
+			remove_modifier = branch_office_bonus_tier_1
+			remove_modifier = branch_office_bonus_tier_2
+			remove_modifier = branch_office_bonus_tier_3
+			add_modifier = { modifier = branch_office_bonus_tier_3 days = -1 }
+		}
+		else_if = {
+			limit = { has_building = building_major_capital }
+			remove_modifier = branch_office_bonus_tier_1
+			remove_modifier = branch_office_bonus_tier_2
+			remove_modifier = branch_office_bonus_tier_3
+			add_modifier = { modifier = branch_office_bonus_tier_2 days = -1 }
+		}
+		else_if = {
+			limit = { has_building = building_capital }
+			remove_modifier = branch_office_bonus_tier_1
+			remove_modifier = branch_office_bonus_tier_2
+			remove_modifier = branch_office_bonus_tier_3
+			add_modifier = { modifier = branch_office_bonus_tier_1 days = -1 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_building = building_colony_shelter
+					has_building = building_deployment_post
+				}
+			}
+			remove_modifier = branch_office_bonus_tier_1
+			remove_modifier = branch_office_bonus_tier_2
+			remove_modifier = branch_office_bonus_tier_3
+			add_modifier = { modifier = branch_office_bonus_tier_1 days = -1 }
+		}
+	}
+}
+
+# Apply to all existing planets on game start
+event = {
+	id = branch_office_slots.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_planet = {
+			limit = {
+				OR = {
+					has_building = building_colony_shelter
+					has_building = building_deployment_post
+					has_building = building_capital
+					has_building = building_major_capital
+					has_building = building_system_capital
+				}
+			}
+			planet_event = { id = branch_office_slots.1 }
+		}
+	}
+}

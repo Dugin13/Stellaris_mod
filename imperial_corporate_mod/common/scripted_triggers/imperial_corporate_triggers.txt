@@ -1,0 +1,19 @@
+# Imperial Corporate Scripted Triggers
+# Extends megacorp checks to include Imperial Corporate authority
+
+# Override is_megacorp to include Imperial Corporate
+is_megacorp = {
+	OR = {
+		has_authority = auth_corporate
+		has_authority = auth_imperial_corporate
+	}
+}
+
+# Override has_corporate_government to include Imperial Corporate
+has_corporate_government = {
+	OR = {
+		has_authority = auth_corporate
+		has_authority = auth_imperial_corporate
+		has_civic = civic_galactic_sovereign_megacorp
+	}
+}

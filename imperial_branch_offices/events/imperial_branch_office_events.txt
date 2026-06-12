@@ -1,0 +1,30 @@
+namespace = imperial_branch_office
+
+# Event fired when the ascension perk is taken
+country_event = {
+	id = imperial_branch_office.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		# Grant branch office mechanics to the empire
+		set_country_flag = imperial_branch_offices_enabled
+		
+		# Add notification
+		country_event = { id = imperial_branch_office.2 }
+	}
+}
+
+# Notification event
+country_event = {
+	id = imperial_branch_office.2
+	title = "imperial_branch_office.2.name"
+	desc = "imperial_branch_office.2.desc"
+	picture = GFX_evt_galactic_senate
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EXCELLENT"
+	}
+}

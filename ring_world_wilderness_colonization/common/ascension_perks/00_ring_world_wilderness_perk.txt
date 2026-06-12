@@ -1,0 +1,48 @@
+# Ring World Wilderness Colonization Ascension Perk
+
+ap_ring_world_pioneers = {
+	potential = {
+		NOT = { has_ascension_perk = ap_ring_world_pioneers }
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_technology_mega_engineering"
+			OR = {
+				has_technology = tech_ring_world
+				has_technology = tech_mega_engineering
+			}
+		}
+	}
+	
+	modifier = {
+		# Grant FULL habitability on ring worlds and relic worlds for wilderness empires
+		# Wilderness trait gives -200% habitability, so we need +200% to reach 0%, then more for actual habitability
+		# Setting to +300% gives net +100% habitability (300% - 200% trait penalty = 100% effective)
+		pc_ringworld_habitable_habitability = 3.00
+		pc_relic_habitability = 3.00
+	}
+	
+	on_enabled = {
+		custom_tooltip = "ap_ring_world_pioneers_effect"
+	}
+	
+	ai_weight = {
+		factor = 10
+		modifier = {
+			factor = 2
+			has_origin = origin_shattered_ring
+		}
+		modifier = {
+			factor = 2
+			has_valid_civic = civic_agrarian_idyll
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_ring_world
+				has_technology = tech_mega_engineering
+			}
+		}
+	}
+}

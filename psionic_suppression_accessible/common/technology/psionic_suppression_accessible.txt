@@ -1,0 +1,54 @@
+# Override for tech_psionic_suppression
+# Removes the "has_encountered_psionic_auras" requirement
+# Allows all empires (including Wilderness) to research this tech without encountering auras first
+
+tech_psionic_suppression = {
+	cost = @tier2cost1
+	area = society
+	tier = 2
+	category = { psionics }
+	weight = @tier2weight1
+
+	potential = {
+		has_shroud_dlc = yes
+		# REMOVED: has_encountered_psionic_auras = yes
+		# Now accessible without needing to encounter psionic auras
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = tech_psionic_suppression_feature_tt
+		}
+	}
+
+	# unlocks shroud seals and psionic suppressors
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_psionic_suppression
+		}
+		modifier = {
+			factor = 0
+			has_origin = origin_mindwardens
+		}
+	}
+
+	ai_weight = {
+		base = 1
+		modifier = {
+			factor = 1000
+			OR = {
+				has_origin = origin_mindwardens
+				any_system_within_border = {
+					any_neighbor_system = {
+						has_psionic_aura = yes
+						aura_owner = {
+							opinion = { who = root value < 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
