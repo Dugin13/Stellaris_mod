@@ -1,0 +1,37 @@
+decision_arkship_add_compact_module_space = {
+	icon = decision_reactor
+	owned_planets_only = yes
+	enactment_time = 300
+
+	resources = {
+		category = decisions
+		cost = {
+			alloys = 500
+		}
+	}
+
+	potential = {
+		owner? = {
+			has_technology = tech_arkship_construction
+		}
+		ship? = {
+			OR = {
+				is_civilian_arkship = yes
+				is_science_arkship = yes
+				is_military_arkship = yes
+			}
+		}
+	}
+
+	allow = {
+		always = yes
+	}
+
+	effect = {
+		add_deposit = d_compact_modules
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

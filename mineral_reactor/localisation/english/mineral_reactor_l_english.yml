@@ -1,0 +1,5 @@
+l_english:
+ building_mineral_reactor:0 "Mineral Reactor"
+ building_mineral_reactor_desc:0 "A facility where organic matter is converted into refined mineral feedstock at a highly efficient rate."
+ building_mineral_reactor_2:0 "Advanced Mineral Reactor"
+ building_mineral_reactor_2_desc:0 "A facility where organic matter is converted into refined mineral feedstock at a highly efficient rate, with improved waste collection harvesting useful gaseous by-products."

@@ -1,0 +1,8 @@
+# Nomadic Empire Size Change Mod
+# Removes the empire size penalties for nomadic empires
+
+# Applied to all nomadic empires
+nomadic_empire = {
+	empire_size_colonies_mult = 0     # Removed penalty (was +1)
+	empire_size_districts_mult = 0    # Removed penalty (was +1)
+}

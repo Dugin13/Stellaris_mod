@@ -1,0 +1,9 @@
+# Double Arkship District Slots Mod
+# Doubles total district slots for all arkship tiers
+
+# Vanilla totals by tier are 9, 18, and 27 (planet size 9 plus add values 0, 9, 18).
+# Doubled totals are 18, 36, and 54, so add values become 9, 27, and 45.
+
+@arkship_max_districts_add_0  = 9    # Was 0
+@arkship_max_districts_add_9  = 27   # Was 9
+@arkship_max_districts_add_18 = 45   # Was 18

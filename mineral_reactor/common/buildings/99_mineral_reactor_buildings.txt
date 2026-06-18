@@ -1,0 +1,144 @@
+building_mineral_reactor = {
+	base_buildtime = @b1_time
+	planet_limit = 1
+	icon = building_mineral_reactor
+
+	category = resource
+
+	building_sets = {
+		farming
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = no }
+		NOR = {
+			is_planet_class = pc_machine
+			has_modifier = resort_colony
+		}
+		OR = {
+			owner = {
+				is_ai = no
+			}
+			has_any_farming_district_or_building = yes
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				is_ai = yes
+				country_uses_food = no
+			}
+			is_planet_class = pc_machine
+			has_modifier = resort_colony
+			AND = {
+				owner = {
+					is_ai = yes
+				}
+				has_any_farming_district_or_building = no
+			}
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = volatile_motes
+			COST = @b1_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			food = @b1_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_farmers_food_produces_add = -2
+		planet_farmers_minerals_produces_add = 2
+	}
+
+	upgrades = {
+		building_mineral_reactor_2
+	}
+
+	prerequisites = {
+		"tech_bio_reactor"
+	}
+}
+
+building_mineral_reactor_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	icon = building_mineral_reactor_2
+	category = resource
+
+	building_sets = {
+		farming
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = no }
+		NOR = {
+			is_planet_class = pc_machine
+			has_modifier = resort_colony
+		}
+		OR = {
+			owner = {
+				is_ai = no
+			}
+			has_any_farming_district_or_building = yes
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				is_ai = yes
+				country_uses_food = no
+			}
+			is_planet_class = pc_machine
+			has_modifier = resort_colony
+			AND = {
+				owner = {
+					is_ai = yes
+				}
+				has_any_farming_district_or_building = no
+			}
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = volatile_motes
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			food = @b2_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_farmers_food_produces_add = -3
+		planet_farmers_minerals_produces_add = 2
+		planet_farmers_volatile_motes_produces_add = 0.05
+		planet_farmers_rare_crystals_produces_add = 0.05
+	}
+
+	prerequisites = {
+		"tech_bio_reactor_2"
+	}
+}
