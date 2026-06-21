@@ -21,7 +21,7 @@ This mod sets both of these multipliers to 0, removing the penalty entirely so n
 3. Start a new game or load an existing save
 
 ## Files Modified
-- `common/static_modifiers/00_nomadic_empire_fix.txt` - Overrides the `nomadic_empire` modifier
+- `common/static_modifiers/zz_nomadic_empire_fix.txt` - Overrides the `nomadic_empire` modifier
 
 ## Notes
 - This is a balance change that removes the vanilla double penalty for nomadic empires
