@@ -1,0 +1,41 @@
+building_food_silo = {
+	base_buildtime = 360
+	icon = building_resource_silo
+	category = resource
+
+	building_sets = {
+		farming
+	}
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = resort_colony }
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	country_modifier = {
+		country_resource_max_food_add = 5000
+	}
+
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = food
+					value < 0
+				}
+			}
+		}
+	}
+}
