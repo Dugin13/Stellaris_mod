@@ -1,0 +1,15 @@
+namespace = influence_storage_x3
+
+country_event = {
+	id = influence_storage_x3.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		remove_modifier = influence_storage_x3_modifier
+		add_modifier = {
+			modifier = influence_storage_x3_modifier
+			days = -1
+		}
+	}
+}

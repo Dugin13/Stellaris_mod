@@ -1,0 +1,11 @@
+on_game_start_country = {
+	events = {
+		influence_storage_x3.1
+	}
+}
+
+on_country_created = {
+	events = {
+		influence_storage_x3.1
+	}
+}

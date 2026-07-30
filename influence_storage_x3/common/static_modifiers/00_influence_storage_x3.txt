@@ -1,0 +1,5 @@
+# Permanent modifier used by the startup event.
+
+influence_storage_x3_modifier = {
+	country_resource_max_influence_add = 2000
+}
